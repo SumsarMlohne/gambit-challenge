@@ -26,9 +26,13 @@ app.use((req, res, next) => {
 app.get("/data", (req, res) => {
     res.sendFile("data.txt", { root: __dirname })
 })
-app.get("*", (req, res) => {
-    res.sendFile("index.html", { root: publicPath })
-})
+if (process.env.NODE_ENV === "development") {
+    app.use(express.static(publicPath))
+
+    app.get("*", (req, res) => {
+        res.sendFile("index.html", { root: publicPath })
+    })
+}
 
 const port = process.env.PORT || 5000
 
