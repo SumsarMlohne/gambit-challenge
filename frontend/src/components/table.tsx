@@ -16,12 +16,12 @@ interface Props {
 
 const Table: React.FC<Props> = (props) => {
   const { data, slice } = props;
-  return !slice ? (
-    <table className="mx-auto text-left w-full md:w-1/4">
+  return slice ? (
+    <table className="mx-auto text-center w-full md:w-1/4">
       <thead className="bg-g-white-mono text-g-purple">
         <tr>
-          <th className="px-4 py-3">Id</th>
-          <th className="px-4 py-3">Value</th>
+          <th scope="col" className="text-g-header-text px-4 py-3">Id</th>
+          <th scope="col" className="text-g-header-text px-4 py-3">Value</th>
         </tr>
       </thead>
       <tbody className="text-g-purple">
@@ -34,11 +34,11 @@ const Table: React.FC<Props> = (props) => {
       </tbody>
     </table>
   ) : (
-    <table className="mx-auto text-left w-full md:w-1/4">
+    <table className="mx-auto text-center w-full md:w-1/4">
       <thead className="bg-g-white-mono text-g-purple">
         <tr>
-          <th className="px-4 py-3">Id</th>
-          <th className="px-4 py-3">Value</th>
+          <th scope="col" className="text-g-header-text px-4 py-3">Id</th>
+          <th scope="col" className="text-g-header-text px-4 py-3">Value</th>
         </tr>
       </thead>
       <tbody className="text-g-purple">

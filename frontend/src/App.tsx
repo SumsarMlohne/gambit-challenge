@@ -43,7 +43,7 @@ const App: React.FC = () => {
               onClick={() => setShowAll(!showAll)}
               className="sticky mt-3 bottom-0 bg-g-purple text-white w-full font-semibold py-2 px-4 underline"
             >
-              {showAll ? "Show more" : "Show less"}
+              {showAll ? "Show less" : "Show more"}
             </button>
           </div>
         ) : (

@@ -8,9 +8,9 @@ interface Props {
 const Navbar: React.FC<Props> = (props) => {
   const { setShowRaw, showRaw } = props;
   return (
-    <nav className="container flex justify-between px-4 py-8 mx-auto bg-g-green sticky top-0">
+    <nav className="container flex justify-between px-4 py-8 mx-auto bg-g-dark sticky top-0">
       <div>
-        <h3 className="text-2xl font-medium text-white">Gambit Challenge</h3>
+        <h3 className="text-2xl font-medium text-g-white">Gambit Challenge</h3>
       </div>
       <div className="space-x-8 flex">
         <button
