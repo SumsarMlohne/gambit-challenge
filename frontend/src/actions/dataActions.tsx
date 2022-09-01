@@ -14,7 +14,7 @@ type ReturnData = {
 //hardcoded path to backend for now
 export const getData = () => {
   const promise = axios
-    .get("http://localhost:5000/data")
+    .get("/data")
     .then((res) => {
       return res;
     })
