@@ -1,7 +1,7 @@
 const express = require("express")
 const http = require("http")
 const path = require("path")
-const publicPath = path.join(__dirname, "..", "public")
+const publicPath = path.join(__dirname, "./", "public")
 
 const app = express()
 
