@@ -30,7 +30,7 @@ export const getData = () => {
 //parse the text and put into array of objects for later user
 export const txtDataToObjArray = (rawData: string) => {
   let tempArr: Array<any> = rawData.split(" ");
-  tempArr = rawData.split("\r\n");
+  tempArr = rawData.split("\n");
   for (let i = 1; i < tempArr.length; i++) {
     tempArr[i] = tempArr[i].substring(tempArr[i].indexOf(":") + 1);
   }
