@@ -16,6 +16,7 @@ export const getData = () => {
   const promise = axios
     .get("/data")
     .then((res) => {
+      console.log("DATA RES: ", res);
       return res;
     })
     .catch((err) => {
