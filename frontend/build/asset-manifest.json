@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/gambit-challenge/static/css/main.6ce38966.css",
-    "main.js": "/gambit-challenge/static/js/main.8dfad04a.js",
-    "static/js/787.cda612ba.chunk.js": "/gambit-challenge/static/js/787.cda612ba.chunk.js",
-    "service-worker.js": "/gambit-challenge/service-worker.js",
-    "index.html": "/gambit-challenge/index.html",
-    "main.6ce38966.css.map": "/gambit-challenge/static/css/main.6ce38966.css.map",
-    "main.8dfad04a.js.map": "/gambit-challenge/static/js/main.8dfad04a.js.map",
-    "787.cda612ba.chunk.js.map": "/gambit-challenge/static/js/787.cda612ba.chunk.js.map"
+    "main.css": "/static/css/main.6ce38966.css",
+    "main.js": "/static/js/main.b6c78ab2.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "service-worker.js": "/service-worker.js",
+    "index.html": "/index.html",
+    "main.6ce38966.css.map": "/static/css/main.6ce38966.css.map",
+    "main.b6c78ab2.js.map": "/static/js/main.b6c78ab2.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6ce38966.css",
-    "static/js/main.8dfad04a.js"
+    "static/js/main.b6c78ab2.js"
   ]
 }
