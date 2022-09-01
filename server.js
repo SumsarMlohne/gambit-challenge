@@ -1,7 +1,7 @@
 const express = require("express")
 const http = require("http")
 const path = require("path")
-const publicPath = path.join(__dirname, "./", "public")
+const publicPath = path.join(__dirname, "frontend", "build")
 
 const app = express()
 
@@ -27,7 +27,7 @@ app.get("/data", (req, res) => {
     res.sendFile("data.txt", { root: __dirname })
 })
 app.get("*", (req, res) => {
-    res.sendFile(path.join(publicPath, "index.html"))
+    res.sendFile("index.html", { publicPath })
 })
 
 const port = process.env.PORT || 5000
