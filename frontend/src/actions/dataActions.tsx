@@ -16,7 +16,6 @@ export const getData = () => {
   const promise = axios
     .get("/data")
     .then((res) => {
-      console.log("DATA RES: ", res.data);
       return res;
     })
     .catch((err) => {
@@ -38,7 +37,7 @@ export const txtDataToObjArray = (rawData: string) => {
   return tempArr;
 };
 
-//real4 = float
+//loop through given data array and place conversion in array to return
 export const parseData = (data: Data[]) => {
   let returnArr: ReturnData[] = [];
   let res;
@@ -199,11 +198,11 @@ export const parseData = (data: Data[]) => {
       let res = combineTwo(data[i].value, data[i + 1].value, "float");
 
       returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } /* else if (i === 89) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-      
+    } else if (i === 89) {
+      let res = combineTwo(data[i].value, data[i + 1].value, "long");
+
       returnArr.push({id: `${i}-${i+1}`, value: res});
-    }  */ else if (i === 92) {
+    }  else if (i === 92) {
       let res = combineOne(data[i].value, "92");
 
       returnArr.push({ id: `${i}`, value: res });
@@ -219,35 +218,21 @@ export const parseData = (data: Data[]) => {
       let res = combineOne(data[i].value, "");
 
       returnArr.push({ id: `${i}`, value: res });
-    } /* else if (i === 97) {
+    } else if (i === 97) {
       let res = combineTwo(data[i].value, data[i + 1].value, "float");
       
       returnArr.push({id: `${i}-${i+1}`, value: res});
-    } */ /* else if (i === 99) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-      
-      returnArr.push({id: `${i}-${i+1}`, value: res});
-    } */
-
-    /* else if (i === 21) {
+    } else if (i === 99) {
       let res = combineTwo(data[i].value, data[i + 1].value, "long");
       
       returnArr.push({id: `${i}-${i+1}`, value: res});
-    } else if (i === 33) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-      
-      returnArr.push({id: `${i}-${i+1}`, value: res});
-    } else if (i === 92) {
-      let res = combineOne(data[i].value, "92");
-      
-      returnArr.push({id: `${i}-${i+1}`, value: res});
-    } */
+    }
   }
   return returnArr;
 };
 
 //helper functions
-//huge trial and error, but seems to be working
+//converts to hex strings then creates buffer. return value based on type.
 const combineTwo = (num1: number, num2: number, type: string) => {
   if (parseInt(num1.toString()) === 0 && parseInt(num2.toString()) === 0) {
     return 0;
@@ -270,7 +255,7 @@ const combineTwo = (num1: number, num2: number, type: string) => {
     return res;
   }
 };
-
+//convert to binary string, return integer of that, unless type = 92, then we only want the low byte.
 const combineOne = (num: number, type: String) => {
   if (parseInt(num.toString()) === 0) {
     return 0;
@@ -287,6 +272,7 @@ const combineOne = (num: number, type: String) => {
   }
 };
 
+//converts a number into a binary string, >>> 0 shifts incase of negative value
 const numToBin = (num: number) => {
   return (num >>> 0).toString(2);
 };

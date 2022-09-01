@@ -17,7 +17,7 @@ const Navbar: React.FC<Props> = (props) => {
           onClick={() => setShowRaw(!showRaw)}
           className="bg-g-purple hover:bg-transparent text-white font-semibold hover:text-white px-4 border border-g-purple hover:border-g-purple rounded"
         >
-          {showRaw ? "Parsed data" : "Raw data"}
+          {showRaw ? "Parse data" : "Back"}
         </button>
       </div>
     </nav>
