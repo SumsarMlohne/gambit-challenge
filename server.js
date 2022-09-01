@@ -27,6 +27,7 @@ app.get("/data", (req, res) => {
     res.sendFile("data.txt", { root: __dirname })
 })
 if (process.env.NODE_ENV === "development") {
+    console.log("Public path = ", publicPath)
     app.use(express.static(publicPath))
 
     app.get("*", (req, res) => {
