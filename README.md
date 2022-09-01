@@ -33,7 +33,6 @@ This data is then displayed either in its original state or as the converted val
 # Comments/notes
 I could not get all conversions working, I could not figure out what was going wrong in some cases as they seemed identical to others that worked.
 But super interesting challenge, it was very difficult at first trying to convert them to the right values.
-The commits are a mess because so am I and Heroku is evil.
 
 
 Peace out, Rasmus.
