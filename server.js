@@ -27,7 +27,7 @@ app.get("/data", (req, res) => {
     res.sendFile("data.txt", { root: __dirname })
 })
 app.get("*", (req, res) => {
-    res.sendFile("index.html", { publicPath })
+    res.sendFile("index.html", { root: publicPath })
 })
 
 const port = process.env.PORT || 5000
