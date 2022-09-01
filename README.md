@@ -31,8 +31,7 @@ If its not case 92 where only the low bit is of interest, there i returned the p
 This data is then displayed either in its original state or as the converted values.
 
 # Comments/notes
-I could not get all conversions working, I could not figure out what was going wrong in some cases as they seemed identical to others that worked.
-But super interesting challenge, it was very difficult at first trying to convert them to the right values.
+Super interesting challenge, it was very difficult at first trying to convert them to the right values.
 
 
 Peace out, Rasmus.
