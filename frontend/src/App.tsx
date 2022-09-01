@@ -22,10 +22,13 @@ const App: React.FC = () => {
 
   useEffect(() => {
     let dataPromise = getData();
-    dataPromise.then((rawData: any) => {
+    dataPromise.then((rawData: string) => {
+      console.log("rawData: ", rawData)
       let formattedData = txtDataToObjArray(rawData);
+      console.log("formattedData: ", formattedData)
       setData(formattedData);
       let parsedData = parseData(formattedData);
+      console.log("parsedData: ", parsedData)
       setParsed(parsedData);
     });
   }, []);
