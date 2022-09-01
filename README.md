@@ -26,14 +26,12 @@ Otherwise i return the first 16bit integer from the buffer
 
 combineOne()
 In combineOne i turn the given number into a binary s tring and then parse that to an integer.
-If its not case 92 where only the low bit is of interest, there i returned the parsed value of the low bit.
+If its not case 92 where only the low byte is of interest, there i returned the parsed value of the low byte.
 
 This data is then displayed either in its original state or as the converted values.
 
 # Comments/notes
-I could not get all conversions working, I could not figure out what was going wrong in some cases as they seemed identical to others that worked.
-But super interesting challenge, it was very difficult at first trying to convert them to the right values.
-The commits are a mess because so am I and Heroku is evil.
+Super interesting challenge, it was very difficult at first trying to convert them to the right values.
 
 
 Peace out, Rasmus.
