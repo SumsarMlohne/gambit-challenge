@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 app.get("/data", (req, res) => {
     res.sendFile("data.txt", { root: __dirname })
 })
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === "production") {
     console.log("Public path = ", publicPath)
     app.use(express.static(publicPath))
 
