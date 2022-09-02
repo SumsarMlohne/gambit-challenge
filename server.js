@@ -2,6 +2,7 @@ const express = require("express")
 const http = require("http")
 const path = require("path")
 const publicPath = path.join(__dirname, "frontend", "build")
+const axios = require("axios")
 
 const app = express()
 
@@ -24,8 +25,11 @@ app.use((req, res, next) => {
 })
 
 app.get("/data", (req, res) => {
-    res.sendFile("data.txt", { root: __dirname })
+    axios.get("http://tuftuf.gambitlabs.fi/feed.txt").then(resp => {
+        return res.send(resp.data)
+    }).catch(err => console.log(err))
 })
+
 if (process.env.NODE_ENV === "production") {
     console.log("Public path = ", publicPath)
     app.use(express.static(publicPath))

@@ -99,7 +99,7 @@ export const parseData = (data: Data[]) => {
         returnArr.push({ id: `${i}-${i + 1}`, value: res });
         break;
       case 29:
-        res = combineTwo(data[i].value, data[i + 1].value, "long");
+        res = combineTwo(data[i].value, data[i + 1].value, "");
         returnArr.push({ id: `${i}-${i + 1}`, value: res });
         break;
       case 31:
