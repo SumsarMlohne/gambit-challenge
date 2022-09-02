@@ -1,6 +1,7 @@
 # gambit-challenge
 PWA app that displays TUF-2000M data as it is and converted to readable formats.
 https://re-gambit.herokuapp.com/
+The app works on all devices, simply add it to homescreen or use it in the browser.
 
 # Important files
 server.js
