@@ -1,5 +1,4 @@
-import axios, { AxiosResponse } from "axios";
-import Long from "long";
+import axios from "axios";
 var Buffer = require("buffer/").Buffer;
 
 type Data = {
@@ -41,191 +40,192 @@ export const txtDataToObjArray = (rawData: string) => {
 export const parseData = (data: Data[]) => {
   let returnArr: ReturnData[] = [];
   let res;
-  for (let i = 0; i < data.length; i++) {
-    if (i === 1) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 3) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 5) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 7) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 9) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "long");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 11) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 13) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "long");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 15) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 17) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "long");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 19) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 21) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "long");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 23) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 25) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "long");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 27) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 29) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "long");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 31) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 33) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 35) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 37) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 39) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 41) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 43) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 45) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 47) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 49) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 51) {
-      let res = combineOne(data[i].value, "");
-
-      returnArr.push({ id: `${i}`, value: res });
-    } else if (i === 53) {
-      let res = combineTwo(data[i].value, data[i + 2].value, "");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 56) {
-      let res = combineOne(data[i].value, "");
-
-      returnArr.push({ id: `${i}`, value: res });
-    } else if (i === 59) {
-      let res = combineOne(data[i].value, "");
-
-      returnArr.push({ id: `${i}`, value: res });
-    } else if (i === 60) {
-      let res = combineOne(data[i].value, "");
-
-      returnArr.push({ id: `${i}`, value: res });
-    } else if (i === 61) {
-      let res = combineOne(data[i].value, "");
-
-      returnArr.push({ id: `${i}`, value: res });
-    } else if (i === 62) {
-      let res = combineOne(data[i].value, "");
-
-      returnArr.push({ id: `${i}`, value: res });
-    } else if (i === 72) {
-      let res = combineOne(data[i].value, "");
-
-      returnArr.push({ id: `${i}`, value: res });
-    } else if (i === 77) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 79) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 81) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 83) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 85) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 87) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-
-      returnArr.push({ id: `${i}-${i + 1}`, value: res });
-    } else if (i === 89) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "long");
-
-      returnArr.push({id: `${i}-${i+1}`, value: res});
-    }  else if (i === 92) {
-      let res = combineOne(data[i].value, "92");
-
-      returnArr.push({ id: `${i}`, value: res });
-    } else if (i === 93) {
-      let res = combineOne(data[i].value, "");
-
-      returnArr.push({ id: `${i}`, value: res });
-    } else if (i === 94) {
-      let res = combineOne(data[i].value, "");
-
-      returnArr.push({ id: `${i}`, value: res });
-    } else if (i === 96) {
-      let res = combineOne(data[i].value, "");
-
-      returnArr.push({ id: `${i}`, value: res });
-    } else if (i === 97) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "float");
-      
-      returnArr.push({id: `${i}-${i+1}`, value: res});
-    } else if (i === 99) {
-      let res = combineTwo(data[i].value, data[i + 1].value, "long");
-      
-      returnArr.push({id: `${i}-${i+1}`, value: res});
+  for (let i = 1; i < data.length; i++) {
+    switch (i) {
+      case 1:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 3:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 5:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 7:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 9:
+        res = combineTwo(data[i].value, data[i + 1].value, "long");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 11:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 13:
+        res = combineTwo(data[i].value, data[i + 1].value, "long");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 15:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 17:
+        res = combineTwo(data[i].value, data[i + 1].value, "long");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 19:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 21:
+        res = combineTwo(data[i].value, data[i + 1].value, "long");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 23:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 25:
+        res = combineTwo(data[i].value, data[i + 1].value, "long");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 27:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 29:
+        res = combineTwo(data[i].value, data[i + 1].value, "long");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 31:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 33:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 35:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 37:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 39:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 41:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 43:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 45:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 47:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 49:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 51:
+        res = combineOne(data[i].value, "");
+        returnArr.push({ id: `${i}`, value: res });
+        break;
+      case 53:
+        res = combineTwo(data[i].value, data[i + 2].value, "");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 56:
+        res = combineOne(data[i].value, "");
+        returnArr.push({ id: `${i}`, value: res });
+        break;
+      case 59:
+        res = combineOne(data[i].value, "");
+        returnArr.push({ id: `${i}`, value: res });
+        break;
+      case 60:
+        res = combineOne(data[i].value, "");
+        returnArr.push({ id: `${i}`, value: res });
+        break;
+      case 61:
+        res = combineOne(data[i].value, "");
+        returnArr.push({ id: `${i}`, value: res });
+        break;
+      case 62:
+        res = combineOne(data[i].value, "");
+        returnArr.push({ id: `${i}`, value: res });
+        break;
+      case 72:
+        res = combineOne(data[i].value, "");
+        returnArr.push({ id: `${i}`, value: res });
+        break;
+      case 77:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 79:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 81:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 83:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 85:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 87:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 89:
+        res = combineTwo(data[i].value, data[i + 1].value, "long");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 92:
+        res = combineOne(data[i].value, "92");
+        returnArr.push({ id: `${i}`, value: res });
+        break;
+      case 93:
+        res = combineOne(data[i].value, "");
+        returnArr.push({ id: `${i}`, value: res });
+        break;
+      case 94:
+        res = combineOne(data[i].value, "");
+        returnArr.push({ id: `${i}`, value: res });
+        break;
+      case 96:
+        res = combineOne(data[i].value, "");
+        returnArr.push({ id: `${i}`, value: res });
+        break;
+      case 97:
+        res = combineTwo(data[i].value, data[i + 1].value, "float");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
+      case 99:
+        res = combineTwo(data[i].value, data[i + 1].value, "long");
+        returnArr.push({ id: `${i}-${i + 1}`, value: res });
+        break;
     }
   }
   return returnArr;

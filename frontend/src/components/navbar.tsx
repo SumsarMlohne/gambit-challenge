@@ -8,16 +8,16 @@ interface Props {
 const Navbar: React.FC<Props> = (props) => {
   const { setShowRaw, showRaw } = props;
   return (
-    <nav className="container flex justify-between px-4 py-8 mx-auto bg-g-dark sticky top-0">
+    <nav className="w-full flex justify-between px-4 py-8 mx-auto bg-g-dark sticky top-0">
       <div>
         <h3 className="text-2xl font-medium text-g-white">Gambit Challenge</h3>
       </div>
       <div className="space-x-8 flex">
         <button
           onClick={() => setShowRaw(!showRaw)}
-          className="bg-g-purple hover:bg-transparent text-white font-semibold hover:text-white px-4 border border-g-purple hover:border-g-purple rounded"
+          className="bg-g-purple transform transition-all hover:scale-105 text-white font-semibold px-4  rounded"
         >
-          {showRaw ? "Parse data" : "Back"}
+          {showRaw ? "PARSED" : "RAW"}
         </button>
       </div>
     </nav>
