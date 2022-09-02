@@ -3,11 +3,11 @@ PWA app that displays TUF-2000M data as it is and converted to readable formats.
 https://re-gambit.herokuapp.com/
 
 # Important files
-data.txt
 server.js
 App.tsx
 dataActions.tsx
 parsedData.tsx
+table.tsx
 
 # Solution
 Based on the documentation and researching the topic online i came to the conclusion that the numbers given were 16bit integers.
